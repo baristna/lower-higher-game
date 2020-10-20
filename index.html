@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <script id="card-temp" type="x-template">
+      <div class="card__front">
+        <div class="card__corner">
+          <div class="card__number">{alias}</div>
+          <div class="card__symbol">{unicode}</div>
+        </div> 
+        <div class="card__center">{unicode}</div>
+        <div class="card__bottom">
+          <div class="card__number">{alias}</div>
+          <div class="card__symbol">{unicode}</div>
+        </div> 
+      </div>
+      <div class="card__back"></div>
+    </script>
+    <div id="app">
+      <div class="header">
+        <div class="header__left">High Score: <span id="high-score">5</span></div>
+        <div class="header__right"><button id='open-rules'>Rules</button></div>
+        <div class="header__lives" id="lives"></div>
+      </div>
+
+      <div class="area">
+        <div class="area__inner">
+          <div id='deck' class="deck">
+            <div class="deck__left">Cards Left: <span id="left">52</span></div>
+          </div>
+
+          <div class="area__score">Score: <span id="score">0</span></div>
+
+          <div id="card-wrapper" class="card-wrapper"></div>
+
+          <div class="area__multiplier">x<span id='multiplier'>1</span></div>
+        </div>
+      </div>
+
+      <div class="control">
+        <div></div>
+        <button id="btn-lower" class="control__button control__down">
+          <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24">
+            <g transform="translate(-674.000000, -74.000000)" fill="#B01E1E">
+              <polygon transform="translate(686.000000, 86.000000) rotate(-180.000000) translate(-686.000000, -86.000000) " points="686 74 698 98 674 98"></polygon>
+            </g>
+          </svg>
+          Lower
+        </button>
+        <button id="btn-higher" class="control__button control__up">
+          <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24">
+            <g transform="translate(-674.000000, -74.000000)" fill="#1EB029">
+              <polygon points="686 74 698 98 674 98"></polygon>
+            </g>
+          </svg>
+          Higher
+        </button>
+      </div>
+    </div>
+
+    <div id='end-screen' class="end">
+      <div class="end__text">Game Over</div>
+      <div class="end__score">Score: <span id='end-score'></span></div>
+      <div><button class="end__button" id="new-game">New Game</button></div>  
+    </div>
+
+    <div id='rules' class='rules'>
+      <div class="rules__content">
+        <h1>Lower-Higher Rules</h1>
+        <ul>
+          <li>Focus of the game is to guess the next card if it will higher or lower than the previous one.</li>
+          <li>
+            You will start the game with 3 <span style='color: #B01E1E'>♥</span>'s. Each wrong guess cause <span style='color: #B01E1E'>♥</span> loss.
+            If you lose all of your 3 <span style='color: #B01E1E'>♥</span>'s and guess wrong, the game will end.
+          </li>
+          <li>
+            Each correct guess will increase the multiplier.
+            Each correct guess will increase your score by multiplier.
+          </li>
+          <li>
+            When you guess correctly while you have x5, your multiplier will be spend to gain a <span style='color: #B01E1E'>♥</span>.
+            If you have 3 <span style='color: #B01E1E'>♥</span>'s then multiplier will keep increasing.
+          </li>
+        </ul>
+        <div class="rules__button">
+          Click to continue...
+        </div>
+      </div>
+    </div>
+    <script src="bundle.js" async defer></script>
+  </body>
+</html>

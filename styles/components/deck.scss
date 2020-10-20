@@ -1,0 +1,13 @@
+.deck {
+  position: relative;
+  background-image: url('../assets/deckback.png');
+  background-size: $card_width $card_height;
+  height: $card_height;
+  width: $card_width;
+  margin-right: 20px;
+
+  &__left {
+    position: absolute;
+    bottom: calc(100% + 5px);
+  }
+}
