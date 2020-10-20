@@ -45,7 +45,6 @@ class Deck {
     return this.deck.pop()
   }
   shuffle() {
-    console.log('newDeck', newDeck())
     this.deck = newDeck();
     /**
      * Fisher-Yates Shuffle Algorithm
